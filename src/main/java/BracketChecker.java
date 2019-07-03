@@ -7,6 +7,9 @@ public class BracketChecker {
     Map<Character, Character> matchingBrackets = new HashMap<>();
 
     public BracketChecker(String input){
+        if (input.length() == 0){
+            throw new IllegalArgumentException("Given string is empty.");
+        }
         for (char sign : input.toCharArray()) {
             if (sign != '(' && sign != ')' && sign != '[' && sign != ']' && sign != '{' && sign != '}') {
                 throw new IllegalArgumentException("String should constain only brackets.");
