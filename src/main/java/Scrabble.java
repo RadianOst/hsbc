@@ -29,11 +29,25 @@ public class Scrabble {
         letter_values.put('P', 3);
         letter_values.put('D', 2);
         letter_values.put('G', 2);
+        letter_values.put('A', 1);
+        letter_values.put('E', 1);
+        letter_values.put('I', 1);
+        letter_values.put('O', 1);
+        letter_values.put('U', 1);
+        letter_values.put('L', 1);
+        letter_values.put('N', 1);
+        letter_values.put('R', 1);
+        letter_values.put('S', 1);
+        letter_values.put('T', 1);
 
         this.word = word;
     }
 
     public int getScore() {
-        return 0;
+        int score = 0;
+        for(char letter : word.toCharArray()) {
+            score += letter_values.get(letter);
+        }
+        return score;
     }
 }
