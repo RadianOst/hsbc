@@ -46,7 +46,7 @@ public class Scrabble {
     public int getScore() {
         int score = 0;
         for(char letter : word.toCharArray()) {
-            score += letter_values.get(letter);
+            score += letter_values.get(Character.toUpperCase(letter));
         }
         return score;
     }
