@@ -7,6 +7,9 @@ public class Scrabble {
     private String word;
 
     public Scrabble(String word) {
+        if (word.length() == 0) {
+            throw new IllegalArgumentException("Argument should not be an empty string.");
+        }
         for(char letter : word.toCharArray()) {
             if (! Character.isAlphabetic(letter)) {
                 throw new IllegalArgumentException("Given argument is not a word.");
@@ -45,9 +48,11 @@ public class Scrabble {
 
     public int getScore() {
         int score = 0;
+
         for(char letter : word.toCharArray()) {
             score += letter_values.get(Character.toUpperCase(letter));
         }
+        
         return score;
     }
 }
